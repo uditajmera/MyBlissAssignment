@@ -11,13 +11,19 @@ import UIKit
 let imageCache = NSCache<AnyObject, AnyObject>()
 
 extension UIImageView {
-    func cacheImage(urlString: String){
+    
+    typealias cacheImageCompletionHandler = (Bool) -> Void
+    
+    func cacheImage(urlString: String,
+                    completion:@escaping cacheImageCompletionHandler){
+        
         let url = URL(string: urlString)
         
         image = nil
         
         if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             self.image = imageFromCache
+            completion(true)
             return
         }
         
@@ -28,7 +34,11 @@ extension UIImageView {
                     let imageToCache = UIImage(data: data!)
                     imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
                     self.image = imageToCache
+                     completion(true)
                 }
+            }
+            else{
+                completion(false)
             }
             }.resume()
     }

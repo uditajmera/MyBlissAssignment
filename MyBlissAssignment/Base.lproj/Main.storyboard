@@ -40,6 +40,7 @@
                                                 </imageView>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4Pc-YN-8ze">
                                                     <rect key="frame" x="61.5" y="50.5" width="37" height="37"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </activityIndicatorView>
                                                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxi-MM-T5B">
                                                     <rect key="frame" x="0.0" y="120" width="160" height="18"/>
@@ -85,6 +86,7 @@
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jpt-Fk-tHk">
                                 <rect key="frame" x="167.5" y="313.5" width="40" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dR5-ze-NCN"/>
                                     <constraint firstAttribute="width" constant="40" id="ktS-da-Onz"/>

@@ -26,14 +26,23 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
             title.alpha = 1
             image.alpha = 1
             if let validURL = validEpisode.smallImageUrl{
-                 image.cacheImage(urlString: validURL)
+                
+                image.cacheImage(urlString: validURL) { [weak self](isCompleted) in
+                    
+                    if isCompleted{
+                        self?.indicatorView.stopAnimating()
+                        self?.indicatorView.alpha = 0
+                    }
+                    
+                }
             }
             title.text = validEpisode.title ?? ""
-            indicatorView.stopAnimating()
+            
         } else {
             title.alpha = 0
             image.alpha = 0
-           indicatorView.startAnimating()
+            indicatorView.alpha = 1
+            indicatorView.startAnimating()
         }
     }
     

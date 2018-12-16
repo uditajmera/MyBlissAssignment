@@ -14,12 +14,12 @@ class EpisodesViewController: UIViewController {
     @IBOutlet weak var episodesCollectionView: UICollectionView!
     
     var viewModel: EpisodesViewModel!
-    
+    let pageTitle = "Episodes"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         indicatorView.startAnimating()
-        
+        self.navigationItem.title = pageTitle
         // Do any additional setup after loading the view, typically from a nib.
         self.viewModel = EpisodesViewModel.init(delegate: self)
         self.viewModel.fetchEpisodes()
@@ -31,8 +31,11 @@ extension EpisodesViewController:EpisodesViewModelDelegate{
     
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
        
+        indicatorView.stopAnimating()
+        indicatorView.alpha = 0
+        
         guard let newIndexPathsToReload = newIndexPathsToReload else {
-            indicatorView.stopAnimating()
+            
             episodesCollectionView.reloadData()
             return
         }
