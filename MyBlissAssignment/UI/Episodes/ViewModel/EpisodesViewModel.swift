@@ -44,12 +44,12 @@ class EpisodesViewModel: NSObject {
     
     
     func fetchEpisodes() {
-        // 1
+        
         guard !isFetchInProgress else {
             return
         }
         
-        // 2
+       
         isFetchInProgress = true
         
         client.getFeed(from: .nowPlaying, forPage: currentPage) { result in

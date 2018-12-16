@@ -11,15 +11,12 @@ import UIKit
 extension EpisodesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("number of items->\(self.viewModel.totalCount)")
         return self.viewModel.totalCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.episode, for: indexPath) as! EpisodeCollectionViewCell
-        // 2
-        print("Loading->\(indexPath.row)")
-        print("CurrentCount->\(viewModel.currentCount)")
+        
         if isLoadingCell(for: indexPath) {
             cell.configure(with: .none, withRow: indexPath.row)
         } else {

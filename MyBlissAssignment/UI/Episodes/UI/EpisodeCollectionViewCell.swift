@@ -36,7 +36,8 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
                     
                 }
             }
-            title.text = validEpisode.title ?? ""
+            
+            title.text =  (validEpisode.subTitle ?? "") + " " + (validEpisode.title ?? "")
             
         } else {
             title.alpha = 0
