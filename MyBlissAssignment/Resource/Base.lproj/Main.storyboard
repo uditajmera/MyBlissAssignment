@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lW7-Wr-MBf">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="10" y="64" width="355" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x3E-S5-DZq">
                                     <size key="itemSize" width="160" height="138"/>
@@ -99,8 +99,8 @@
                             <constraint firstItem="jpt-Fk-tHk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9A5-Rq-Adl"/>
                             <constraint firstItem="lW7-Wr-MBf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Epn-1R-HfY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lW7-Wr-MBf" secondAttribute="bottom" id="NE9-Na-piv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lW7-Wr-MBf" secondAttribute="trailing" id="PSl-gh-6h4"/>
-                            <constraint firstItem="lW7-Wr-MBf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tr3-V7-6Gp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lW7-Wr-MBf" secondAttribute="trailing" constant="10" id="PSl-gh-6h4"/>
+                            <constraint firstItem="lW7-Wr-MBf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Tr3-V7-6Gp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

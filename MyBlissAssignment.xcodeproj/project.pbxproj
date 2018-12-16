@@ -118,17 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				DD51A1F621C2E01200F1D413 /* AppDelegate.swift */,
-				DD51A1F821C2E01200F1D413 /* EpisodesViewController.swift */,
-				DD579F0C21C620E1007786DE /* EpisodesViewModel.swift */,
-				DD579F0A21C61F3B007786DE /* EpisodesViewController+CollectionViewDelegates.swift */,
-				DD579F0821C61EB3007786DE /* EpisodeCollectionViewCell.swift */,
-				DD51A1FA21C2E01200F1D413 /* Main.storyboard */,
-				DD51A1FD21C2E01400F1D413 /* Assets.xcassets */,
-				DD51A1FF21C2E01400F1D413 /* LaunchScreen.storyboard */,
-				DD51A20221C2E01400F1D413 /* Info.plist */,
+				DD579F1121C6B54F007786DE /* Episodes */,
 				DD579F0E21C6AC26007786DE /* ImageCache */,
 				DD51A22921C4BE3B00F1D413 /* Networking */,
 				DD51A22421C2F35600F1D413 /* Model */,
+				DD579F1521C6B5CF007786DE /* Resource */,
+				DD51A20221C2E01400F1D413 /* Info.plist */,
 			);
 			path = MyBlissAssignment;
 			sourceTree = "<group>";
@@ -177,6 +172,51 @@
 				DD579F0F21C6AC40007786DE /* UIImageView+Cache.swift */,
 			);
 			path = ImageCache;
+			sourceTree = "<group>";
+		};
+		DD579F1121C6B54F007786DE /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				DD579F1221C6B57C007786DE /* UI */,
+				DD579F1321C6B58F007786DE /* ViewModel */,
+				DD579F1421C6B5A8007786DE /* Extensions */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		DD579F1221C6B57C007786DE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DD51A1F821C2E01200F1D413 /* EpisodesViewController.swift */,
+				DD579F0821C61EB3007786DE /* EpisodeCollectionViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DD579F1321C6B58F007786DE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD579F0C21C620E1007786DE /* EpisodesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DD579F1421C6B5A8007786DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DD579F0A21C61F3B007786DE /* EpisodesViewController+CollectionViewDelegates.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DD579F1521C6B5CF007786DE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DD51A1FA21C2E01200F1D413 /* Main.storyboard */,
+				DD51A1FD21C2E01400F1D413 /* Assets.xcassets */,
+				DD51A1FF21C2E01400F1D413 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
