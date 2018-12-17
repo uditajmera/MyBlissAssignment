@@ -10,21 +10,35 @@ import UIKit
 
 class EpisodeDetailViewController: UIViewController {
 
+    let viewModel: EpisodeDetailsViewModel = EpisodeDetailsViewModel.init()
+    
+    @IBOutlet weak var episodeImage: UIImageView!
+    @IBOutlet weak var episodeTitle: UILabel!
+    @IBOutlet weak var episodeSubTitle: UILabel!
+    
+    @IBOutlet weak var episodeDescription: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        setupUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupUI(){
+        
+        if let validURL = viewModel.imageURL{
+            episodeImage.cacheImage(urlString: validURL) { (isCompleted) in
+                
+            }
+        }
+        
+        episodeTitle.text = viewModel.title
+        episodeSubTitle.text = viewModel.subTitle
+        episodeDescription.text = viewModel.episodeDescription
     }
-    */
+
+    func updateEpisodeDetail(episode:Episode){
+        viewModel.updateEpisodeInfo(newEpisode: episode)
+    }
+
 
 }

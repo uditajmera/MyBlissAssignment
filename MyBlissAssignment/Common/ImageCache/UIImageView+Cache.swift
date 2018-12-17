@@ -27,14 +27,26 @@ extension UIImageView {
             return
         }
         
+        
+        let activityIndicator = UIActivityIndicatorView.init(style:.whiteLarge)
+        activityIndicator.backgroundColor = .gray
+        activityIndicator.center = self.center
+        activityIndicator.startAnimating()
+        addSubview(activityIndicator)
+        
+        
         URLSession.shared.dataTask(with: url!) {
             data, response, error in
             if  data  != nil{
                 DispatchQueue.main.async {
+                    
+                    activityIndicator.stopAnimating()
+                    activityIndicator.removeFromSuperview()
+                    
                     let imageToCache = UIImage(data: data!)
                     imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
                     self.image = imageToCache
-                     completion(true)
+                    completion(true)
                 }
             }
             else{

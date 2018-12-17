@@ -15,6 +15,9 @@ class EpisodesViewController: UIViewController {
     
     var viewModel: EpisodesViewModel!
     let pageTitle = "Episodes"
+    let episodeDetailIdentifier = "EpisodeDetails"
+    
+    var selectedIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,15 @@ class EpisodesViewController: UIViewController {
         self.viewModel.fetchEpisodes()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == episodeDetailIdentifier{
+           let dest =  segue.destination as? EpisodeDetailViewController
+            dest?.updateEpisodeDetail(episode: viewModel.episode(at: self.selectedIndex))
+        }
+    }
+    
 }
 
 extension EpisodesViewController:EpisodesViewModelDelegate{

@@ -8,6 +8,16 @@
 
 import UIKit
 
+extension EpisodesViewController:UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        
+        self.performSegue(withIdentifier: episodeDetailIdentifier,
+                          sender: self)
+    }
+}
+
 extension EpisodesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

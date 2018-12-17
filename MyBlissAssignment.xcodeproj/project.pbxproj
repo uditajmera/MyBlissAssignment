@@ -25,6 +25,8 @@
 		DD579F0D21C620E1007786DE /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD579F0C21C620E1007786DE /* EpisodesViewModel.swift */; };
 		DD579F1021C6AC40007786DE /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD579F0F21C6AC40007786DE /* UIImageView+Cache.swift */; };
 		DD579F1921C6B69B007786DE /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD579F1821C6B69B007786DE /* EpisodeDetailViewController.swift */; };
+		DD579F1C21C6C56B007786DE /* EpisodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD579F1B21C6C56B007786DE /* EpisodeDetailsViewModel.swift */; };
+		DD7C081121C6CA850038F550 /* EpisodeDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C081021C6CA850038F550 /* EpisodeDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		DD579F0C21C620E1007786DE /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
 		DD579F0F21C6AC40007786DE /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		DD579F1821C6B69B007786DE /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		DD579F1B21C6C56B007786DE /* EpisodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewModel.swift; sourceTree = "<group>"; };
+		DD7C081021C6CA850038F550 /* EpisodeDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +125,7 @@
 			children = (
 				DD51A1F621C2E01200F1D413 /* AppDelegate.swift */,
 				DD579F1621C6B655007786DE /* UI */,
-				DD579F0E21C6AC26007786DE /* ImageCache */,
+				DD579F1A21C6C480007786DE /* Common */,
 				DD51A22921C4BE3B00F1D413 /* Networking */,
 				DD51A22421C2F35600F1D413 /* Model */,
 				DD579F1521C6B5CF007786DE /* Resource */,
@@ -234,8 +238,18 @@
 			isa = PBXGroup;
 			children = (
 				DD579F1821C6B69B007786DE /* EpisodeDetailViewController.swift */,
+				DD579F1B21C6C56B007786DE /* EpisodeDetailsViewModel.swift */,
+				DD7C081021C6CA850038F550 /* EpisodeDescriptionView.swift */,
 			);
 			path = EpisodeDetail;
+			sourceTree = "<group>";
+		};
+		DD579F1A21C6C480007786DE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DD579F0E21C6AC26007786DE /* ImageCache */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,10 +384,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD51A1F921C2E01200F1D413 /* EpisodesViewController.swift in Sources */,
+				DD579F1C21C6C56B007786DE /* EpisodeDetailsViewModel.swift in Sources */,
 				DD579F1921C6B69B007786DE /* EpisodeDetailViewController.swift in Sources */,
 				DD579F0D21C620E1007786DE /* EpisodesViewModel.swift in Sources */,
 				DD51A22B21C4BE8B00F1D413 /* BasePath.swift in Sources */,
 				DD51A22621C2F37400F1D413 /* Episode.swift in Sources */,
+				DD7C081121C6CA850038F550 /* EpisodeDescriptionView.swift in Sources */,
 				DD579F0921C61EB3007786DE /* EpisodeCollectionViewCell.swift in Sources */,
 				DD579F1021C6AC40007786DE /* UIImageView+Cache.swift in Sources */,
 				DD51A22D21C4CBBD00F1D413 /* APIResult.swift in Sources */,
@@ -557,6 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z585H32R2;
 				INFOPLIST_FILE = MyBlissAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,6 +591,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z585H32R2;
 				INFOPLIST_FILE = MyBlissAssignment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
