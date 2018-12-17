@@ -19,7 +19,7 @@ extension EpisodesViewController:UICollectionViewDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row > viewModel.currentCount{
+        if isLoadingCell(for: indexPath) {
             self.viewModel.fetchEpisodes()
         }
     }
