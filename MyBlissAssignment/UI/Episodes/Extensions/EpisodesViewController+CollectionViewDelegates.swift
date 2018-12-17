@@ -16,6 +16,13 @@ extension EpisodesViewController:UICollectionViewDelegate{
         self.performSegue(withIdentifier: episodeDetailIdentifier,
                           sender: self)
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row > viewModel.currentCount{
+            self.viewModel.fetchEpisodes()
+        }
+    }
 }
 
 extension EpisodesViewController: UICollectionViewDataSource {

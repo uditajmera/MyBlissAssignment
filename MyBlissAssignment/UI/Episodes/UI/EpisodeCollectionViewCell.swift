@@ -8,14 +8,18 @@
 
 import UIKit
 
+/// This call shows episode data(Image & Title) in UI in the EpisodesViewController
 class EpisodeCollectionViewCell: UICollectionViewCell {
-    
+     //MARK:- IBOutlet
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
     
+     //MARK:- Configure methods
+    
+    /// this method will reset the cell before getting reuse
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+        /// reset cell with default setting
         configure(with: .none, withRow: -1)
     }
     
