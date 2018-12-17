@@ -26,7 +26,6 @@
 		DD579F1021C6AC40007786DE /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD579F0F21C6AC40007786DE /* UIImageView+Cache.swift */; };
 		DD579F1921C6B69B007786DE /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD579F1821C6B69B007786DE /* EpisodeDetailViewController.swift */; };
 		DD579F1C21C6C56B007786DE /* EpisodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD579F1B21C6C56B007786DE /* EpisodeDetailsViewModel.swift */; };
-		DD7C081121C6CA850038F550 /* EpisodeDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C081021C6CA850038F550 /* EpisodeDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +71,6 @@
 		DD579F0F21C6AC40007786DE /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		DD579F1821C6B69B007786DE /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		DD579F1B21C6C56B007786DE /* EpisodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsViewModel.swift; sourceTree = "<group>"; };
-		DD7C081021C6CA850038F550 /* EpisodeDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,9 +235,8 @@
 		DD579F1721C6B672007786DE /* EpisodeDetail */ = {
 			isa = PBXGroup;
 			children = (
-				DD579F1821C6B69B007786DE /* EpisodeDetailViewController.swift */,
-				DD579F1B21C6C56B007786DE /* EpisodeDetailsViewModel.swift */,
-				DD7C081021C6CA850038F550 /* EpisodeDescriptionView.swift */,
+				DD7C081221C749580038F550 /* UI */,
+				DD7C081321C749650038F550 /* ViewModel */,
 			);
 			path = EpisodeDetail;
 			sourceTree = "<group>";
@@ -250,6 +247,22 @@
 				DD579F0E21C6AC26007786DE /* ImageCache */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DD7C081221C749580038F550 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DD579F1821C6B69B007786DE /* EpisodeDetailViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		DD7C081321C749650038F550 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD579F1B21C6C56B007786DE /* EpisodeDetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,7 +402,6 @@
 				DD579F0D21C620E1007786DE /* EpisodesViewModel.swift in Sources */,
 				DD51A22B21C4BE8B00F1D413 /* BasePath.swift in Sources */,
 				DD51A22621C2F37400F1D413 /* Episode.swift in Sources */,
-				DD7C081121C6CA850038F550 /* EpisodeDescriptionView.swift in Sources */,
 				DD579F0921C61EB3007786DE /* EpisodeCollectionViewCell.swift in Sources */,
 				DD579F1021C6AC40007786DE /* UIImageView+Cache.swift in Sources */,
 				DD51A22D21C4CBBD00F1D413 /* APIResult.swift in Sources */,
