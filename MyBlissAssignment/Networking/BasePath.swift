@@ -8,13 +8,21 @@
 
 import Foundation
 
+/// This protocol defins the var to construct Basepath for services
 protocol BasePath {
     var base: String { get }
     var path: String { get }
 }
 
+
+// MARK: - BasePath protocol oriented extension
 extension BasePath {
     
+    
+    /// This function will create URLRequest from base path and params array which passes to the function
+    ///
+    /// - Parameter params: parameter array
+    /// - Returns: URLRequest
     func getRequest(forParams params:[String:String])->URLRequest{
         var newUrlComponents = urlComponents
         let queryItems = params.map { key, value in
@@ -37,10 +45,16 @@ extension BasePath {
     }
 }
 
+
+/// Type of episode feed
+///
+/// - nowPlaying: defalut behavior
 enum EpisodeFeed{
     case nowPlaying
 }
 
+// MARK: - EpisodeFeed
+/// this extension provide the basePath info  to create service request to get Episodes Feed
 extension EpisodeFeed: BasePath{
     
     var base: String {

@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// This class Inherits from APIClient
+///  this class is responsible for creating URLRequest, handles genric fetch results and type cast it to EpisodeFeedResult
 class EpisodeClient: APIClient {
     
     let session: URLSession
@@ -20,6 +22,12 @@ class EpisodeClient: APIClient {
         self.init(configuration: .default)
     }
     
+    /// function create URLRequest and initiate the fetch service call
+    ///
+    /// - Parameters:
+    ///   - feedType: EpisodeFeed
+    ///   - currentPage: current Page for fetching Episodes in request
+    ///   - completion: completon block returns EpisodeFeedResult on success and APIError on failure
     func getFeed(from feedType: EpisodeFeed,
                  forPage currentPage:Int,
                  completion: @escaping (APIResult<EpisodeFeedResult?, APIError>) -> Void) {

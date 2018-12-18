@@ -26,6 +26,8 @@ enum APIError: Error {
     }
 }
 
+
+/// APIClient protocol provide generic interface for client to perform URLSession data and get Generic Model type which can be convert to passing decodable Model
 protocol APIClient {
     
     var session: URLSession { get }
@@ -36,10 +38,20 @@ protocol APIClient {
     
 }
 
+
+// MARK: - APIClient protocol extension
 extension APIClient{
     
+    /// JSONTaskCompletionHandler used as a datatask completion handler
     typealias JSONTaskCompletionHandler = (Decodable?, APIError?) -> Void
     
+    /// This function initiate dataTask on the request, on response data gets decode to generic decodingType passes in parameters of function
+    ///
+    /// - Parameters:
+    ///   - request: URLRequest
+    ///   - decodingType: T.Type generic type of model
+    ///   - completion: JSONTaskCompletionHandler
+    /// - Returns: URLSessionDataTask
     func decodingTask<T: Decodable>(with request: URLRequest,
                                     decodingType: T.Type,
                                     completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
@@ -67,6 +79,13 @@ extension APIClient{
         return task
     }
     
+    
+    /// This method calls decodingTask which calls service for request, on getting response handles the @escaping completion block
+    /// and return
+    /// - Parameters:
+    ///   - request: URLRequest
+    ///   - decode: pass Decodable and returns generic model
+    ///   - completion: pass APIResult and returns void
     func fetch<T: Decodable>(with request: URLRequest,
                              decode: @escaping (Decodable) -> T?,
                              completion: @escaping (APIResult<T, APIError>) -> Void) {
@@ -93,24 +112,6 @@ extension APIClient{
         task.resume()
     }
     
-    func dataToJSON(data: Data) -> AnyObject? {
-        do {
-            return try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as AnyObject
-        } catch let myJSONError {
-            print(myJSONError)
-        }
-        return nil
-    }
-    
-    // Convert from JSON to nsdata
-    func jsonToNSData(json: AnyObject) -> NSData?{
-        do {
-            return try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
-        } catch let myJSONError {
-            print(myJSONError)
-        }
-        return nil;
-    }
 }
 
 

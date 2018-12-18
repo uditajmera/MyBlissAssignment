@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - UICollectionViewDelegate
 extension EpisodesViewController:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -25,6 +26,8 @@ extension EpisodesViewController:UICollectionViewDelegate{
     }
 }
 
+
+// MARK: - UICollectionViewDataSource
 extension EpisodesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -43,6 +46,8 @@ extension EpisodesViewController: UICollectionViewDataSource {
     }
 }
 
+
+// MARK: - UICollectionViewDataSourcePrefetching
 extension EpisodesViewController:UICollectionViewDataSourcePrefetching{
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
@@ -52,6 +57,8 @@ extension EpisodesViewController:UICollectionViewDataSourcePrefetching{
     }
 }
 
+
+// MARK: - Utiltiy function extension
  extension EpisodesViewController {
     
     private enum CellIdentifiers {
@@ -59,10 +66,21 @@ extension EpisodesViewController:UICollectionViewDataSourcePrefetching{
     }
     
     
+    /// function returns if passing indexPath is loading or loaded
+    /// returns YES if loading
+    /// returns NO if loaded
+    ///
+    /// - Parameter indexPath: IndexPath of cell
+    /// - Returns: Bool
     func isLoadingCell(for indexPath: IndexPath) -> Bool {
         return indexPath.row >= viewModel.currentCount
     }
     
+    
+    /// This function will return set of indexpath which are displaying and needs to reload from passing array of Indexpath
+    ///
+    /// - Parameter indexPaths: IndexPath array which needs to be intersect with the visible indexpath
+    /// - Returns: indexpath which are visible from passing indexPath array
     func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
         let indexPathsForVisibleRows = episodesCollectionView.indexPathsForVisibleItems
         let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)

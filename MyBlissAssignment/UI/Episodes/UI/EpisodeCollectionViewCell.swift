@@ -24,6 +24,11 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     }
     
     
+    /// This method takes Episode object as input and update UI
+    ///
+    /// - Parameters:
+    ///   - episode: Episode UI model
+    ///   - row: Index
     func configure(with episode: Episode?, withRow row:Int) {
         if let validEpisode = episode {
             title.alpha = 1

@@ -27,7 +27,7 @@ class EpisodesViewController: UIViewController {
     var selectedIndex = -1
     
     //MARK:- UI setup
-    
+        
     /// viewDidLoad : setup UI Initial UI
     override func viewDidLoad() {
         super.viewDidLoad()
