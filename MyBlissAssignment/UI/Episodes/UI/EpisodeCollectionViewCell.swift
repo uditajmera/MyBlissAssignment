@@ -13,6 +13,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
      //MARK:- IBOutlet
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
      //MARK:- Configure methods
     
@@ -31,6 +32,10 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     ///   - row: Index
     func configure(with episode: Episode?, withRow row:Int) {
         if let validEpisode = episode {
+            
+            activityIndicator.stopAnimating()
+            activityIndicator.alpha = 0
+            
             title.alpha = 1
             image.alpha = 1
             if let validURL = validEpisode.smallImageUrl{
@@ -41,6 +46,8 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
             title.text =  (validEpisode.subTitle ?? "") + " " + (validEpisode.title ?? "")
             
         } else {
+            activityIndicator.startAnimating()
+            activityIndicator.alpha = 1
             title.alpha = 0
             image.alpha = 0
         }

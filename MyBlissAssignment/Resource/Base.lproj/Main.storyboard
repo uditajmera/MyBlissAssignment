@@ -54,6 +54,10 @@
                                                         <constraint firstAttribute="height" constant="18" id="T7g-gr-NCU"/>
                                                     </constraints>
                                                 </view>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="O6C-vW-R5K">
+                                                    <rect key="frame" x="61.5" y="50.5" width="37" height="37"/>
+                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -61,11 +65,14 @@
                                             <constraint firstAttribute="trailing" secondItem="dxi-MM-T5B" secondAttribute="trailing" id="Nnx-SU-vEM"/>
                                             <constraint firstItem="dxi-MM-T5B" firstAttribute="leading" secondItem="ZRl-H4-Vht" secondAttribute="leading" id="O5m-m9-1Jc"/>
                                             <constraint firstItem="YoK-uV-eZE" firstAttribute="top" secondItem="ZRl-H4-Vht" secondAttribute="top" id="VIk-gM-Gi9"/>
+                                            <constraint firstItem="O6C-vW-R5K" firstAttribute="centerX" secondItem="ZRl-H4-Vht" secondAttribute="centerX" id="eUb-3Z-PXS"/>
                                             <constraint firstAttribute="bottom" secondItem="YoK-uV-eZE" secondAttribute="bottom" id="jbn-X1-zTg"/>
+                                            <constraint firstItem="O6C-vW-R5K" firstAttribute="centerY" secondItem="ZRl-H4-Vht" secondAttribute="centerY" id="mBB-Zg-w43"/>
                                             <constraint firstAttribute="bottom" secondItem="dxi-MM-T5B" secondAttribute="bottom" id="qdP-eB-Eph"/>
                                             <constraint firstItem="YoK-uV-eZE" firstAttribute="leading" secondItem="ZRl-H4-Vht" secondAttribute="leading" id="vcf-eK-Olk"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="O6C-vW-R5K" id="5Wd-9o-NPO"/>
                                             <outlet property="image" destination="YoK-uV-eZE" id="PX0-EC-p3C"/>
                                             <outlet property="title" destination="40a-7P-gov" id="mfG-sY-UZv"/>
                                         </connections>
